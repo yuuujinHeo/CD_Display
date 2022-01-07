@@ -3,9 +3,6 @@
     <qresource prefix="/">
         <file alias="font/lotteDreamBold.ttf">../font/lotteDreamBold.ttf</file>
         <file alias="font/lotteDreamLight.ttf">../font/lotteDreamLight.ttf</file>
-        <file alias="LeftItem.qml">../LeftItem.qml</file>
-        <file alias="RightItem.qml">../RightItem.qml</file>
-        <file alias="OneView.qml">../OneView.qml</file>
         <file alias="image/background.png">../image/background.png</file>
         <file alias="image/background_error.png">../image/background_error.png</file>
         <file alias="image/background_maintenance.png">../image/background_maintenance.png</file>
