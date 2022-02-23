@@ -1,11 +1,12 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'QtHttpServer.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../websocket/QtHttpServer.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
@@ -13,7 +14,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'QtHttpServer.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.15.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -42,7 +43,7 @@ QT_MOC_LITERAL(0, 0, 19) // "QtHttpServerWrapper"
 static const uint qt_meta_data_QtHttpServerWrapper[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -63,10 +64,14 @@ void QtHttpServerWrapper::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject QtHttpServerWrapper::staticMetaObject = {
-    { &QTcpServer::staticMetaObject, qt_meta_stringdata_QtHttpServerWrapper.data,
-      qt_meta_data_QtHttpServerWrapper,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject QtHttpServerWrapper::staticMetaObject = { {
+    QMetaObject::SuperData::link<QTcpServer::staticMetaObject>(),
+    qt_meta_stringdata_QtHttpServerWrapper.data,
+    qt_meta_data_QtHttpServerWrapper,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *QtHttpServerWrapper::metaObject() const
@@ -160,7 +165,7 @@ QT_MOC_LITERAL(40, 480, 4) // "mode"
 static const uint qt_meta_data_QtHttpServer[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
       21,   14, // methods
@@ -226,7 +231,7 @@ static const uint qt_meta_data_QtHttpServer[] = {
 void QtHttpServer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        QtHttpServer *_t = static_cast<QtHttpServer *>(_o);
+        auto *_t = static_cast<QtHttpServer *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->started((*reinterpret_cast< quint16(*)>(_a[1]))); break;
@@ -324,10 +329,14 @@ void QtHttpServer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject QtHttpServer::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_QtHttpServer.data,
-      qt_meta_data_QtHttpServer,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject QtHttpServer::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_QtHttpServer.data,
+    qt_meta_data_QtHttpServer,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *QtHttpServer::metaObject() const
@@ -363,7 +372,7 @@ int QtHttpServer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void QtHttpServer::started(quint16 _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
@@ -376,35 +385,35 @@ void QtHttpServer::stopped()
 // SIGNAL 2
 void QtHttpServer::error(const QString & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
 void QtHttpServer::clientConnected(const QString & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
 void QtHttpServer::clientDisconnected(const QString & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 
 // SIGNAL 5
 void QtHttpServer::requestNeedsReply(QtHttpRequest * _t1, QtHttpReply * _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 
 // SIGNAL 6
 void QtHttpServer::clientConnectInfo(const QString & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 QT_WARNING_POP

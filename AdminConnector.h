@@ -1,4 +1,4 @@
-#ifndef ADMINCONNECTOR_H
+﻿#ifndef ADMINCONNECTOR_H
 #define ADMINCONNECTOR_H
 
 #include <QObject>
@@ -57,6 +57,11 @@ public:
     Q_INVOKABLE QString getRightMenu(int outlet, int num);
     Q_INVOKABLE int getRightStatus(int outlet, int num);
 
+    Q_INVOKABLE QString getCallStr();
+    Q_INVOKABLE QString getTimeStr();
+    Q_INVOKABLE QString getMsgStr();
+
+
 //    Q_INVOKABLE void setRightStatus(int outlet, int num, int status);
 
     QVector<ST_ORDER_LEFT_INFO> LeftList;
@@ -64,6 +69,9 @@ public:
     int connection_count;
     int IS_FIRST_LOADING = true;
 
+    QString operation_msg;
+    QString call_num;
+    QString wait_time;
 
 public slots:
     void onCheck();

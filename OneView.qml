@@ -11,6 +11,11 @@ Window {
     width: 1920
     height: 1080
     visibility: "FullScreen"
+    property int __error: 0
+    property string _op_msg: ""
+    property string _call_msg: ""
+    property string _time_msg: ""
+    property int mImageToggle: 0
 
     Backend {
         id: backend
@@ -112,6 +117,65 @@ Window {
             anchors.leftMargin: 760
             font.family: "12LotteMartDreamBold"
         }
+
+        Rectangle {
+            id: rect_msg
+            x: 0
+            y: 482
+            width: 1920
+            height: 195
+            color: "#f11616"
+            visible: false
+
+            Text {
+                id: text_msg
+                text: qsTr("hello everyone")
+                anchors.fill: parent
+                verticalAlignment: Text.AlignVCenter
+                font.family: "12LotteMartDreamBold"
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 80
+            }
+        }
+
+
+        Timer{
+            id: imageTimer
+            interval: 1000
+            repeat: true
+            running: true
+            triggeredOnStart: true
+            onTriggered:{
+                _op_msg = admin.getMsgStr();
+                text_msg.text = _op_msg;
+                if(_op_msg == ""){
+                    rect_msg.visible = false;
+                    text_msg.visible = false;
+                    //                text_error_1.visible = false;
+                    //                text_error_2.visible = false;
+                }else{
+                    if(mImageToggle == 0){
+                        mImageToggle = 1;
+                    }else if(mImageToggle == 1){
+                        mImageToggle = 2;
+                    }else{
+                        mImageToggle = 0;
+                    }
+
+                    if(mImageToggle == 0){
+                        //                    rect_error.visible = false;
+                        text_msg.visible = false;
+                        rect_msg.visible = false;
+                    }else{
+                        rect_msg.visible = true;
+                        text_msg.visible = true;
+                    }
+                }
+                text_call.text = admin.getCallStr();
+                text_time.text = admin.getTimeStr();
+            }
+        }
+
     }
 
 
@@ -137,18 +201,21 @@ Window {
     }
 
     function maintenance(){
+        console.log("in maintenance");
         background_maintenance.visible = true;
         background_prepare.visible = false;
-        background_error.visible = true;
+        background_error.visible = false;
     }
 
     function preoperation(){
+        console.log("in ready");
         background_prepare.visible = true;
         background_maintenance.visible = false;
-        background_error.visible = true;
+        background_error.visible = false;
     }
     function error(){
-        background_maintenance.visible = true;
+        console.log("in error");
+        background_maintenance.visible = false;
         background_prepare.visible = false;
         background_error.visible = true;
     }
@@ -252,6 +319,6 @@ Window {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.33}D{i:13}D{i:5}D{i:19}D{i:20}D{i:21}
+    D{i:0;formeditorZoom:0.33}D{i:15;anchors_height:80;anchors_width:719;anchors_x:8;anchors_y:78}
 }
 ##^##*/

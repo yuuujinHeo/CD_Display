@@ -1,18 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Backend.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../Backend.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Backend.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.15.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -43,7 +44,7 @@ QT_MOC_LITERAL(2, 16, 0) // ""
 static const uint qt_meta_data_Backend[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
        1,   14, // methods
@@ -65,7 +66,7 @@ static const uint qt_meta_data_Backend[] = {
 void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        Backend *_t = static_cast<Backend *>(_o);
+        auto *_t = static_cast<Backend *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->onTimer(); break;
@@ -75,10 +76,14 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject Backend::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_Backend.data,
-      qt_meta_data_Backend,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject Backend::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_Backend.data,
+    qt_meta_data_Backend,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *Backend::metaObject() const

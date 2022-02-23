@@ -1,18 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'QtHttpReply.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../websocket/QtHttpReply.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'QtHttpReply.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.15.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -72,7 +73,7 @@ QT_MOC_LITERAL(24, 260, 18) // "ServiceUnavailable"
 static const uint qt_meta_data_QtHttpReply[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
        8,   14, // methods
@@ -106,8 +107,8 @@ static const uint qt_meta_data_QtHttpReply[] = {
     QMetaType::Void, QMetaType::QByteArray, QMetaType::QByteArray,   12,   13,
     QMetaType::Void,
 
- // enums: name, flags, count, data
-       7, 0x0,   10,   76,
+ // enums: name, alias, flags, count, data
+       7,    7, 0x0,   10,   77,
 
  // enum data: key, value
       15, uint(QtHttpReply::Ok),
@@ -127,7 +128,7 @@ static const uint qt_meta_data_QtHttpReply[] = {
 void QtHttpReply::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        QtHttpReply *_t = static_cast<QtHttpReply *>(_o);
+        auto *_t = static_cast<QtHttpReply *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->requestSendHeaders(); break;
@@ -159,10 +160,14 @@ void QtHttpReply::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject QtHttpReply::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_QtHttpReply.data,
-      qt_meta_data_QtHttpReply,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject QtHttpReply::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_QtHttpReply.data,
+    qt_meta_data_QtHttpReply,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *QtHttpReply::metaObject() const

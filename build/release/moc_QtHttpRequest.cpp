@@ -1,18 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'QtHttpRequest.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.3)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../websocket/QtHttpRequest.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'QtHttpRequest.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.3. It"
+#error "This file was generated using the moc from 5.15.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -53,7 +54,7 @@ QT_MOC_LITERAL(10, 82, 4) // "data"
 static const uint qt_meta_data_QtHttpRequest[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
        4,   14, // methods
@@ -81,7 +82,7 @@ static const uint qt_meta_data_QtHttpRequest[] = {
 void QtHttpRequest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        QtHttpRequest *_t = static_cast<QtHttpRequest *>(_o);
+        auto *_t = static_cast<QtHttpRequest *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->setUrl((*reinterpret_cast< const QUrl(*)>(_a[1]))); break;
@@ -93,10 +94,14 @@ void QtHttpRequest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject QtHttpRequest::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_QtHttpRequest.data,
-      qt_meta_data_QtHttpRequest,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject QtHttpRequest::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_QtHttpRequest.data,
+    qt_meta_data_QtHttpRequest,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *QtHttpRequest::metaObject() const

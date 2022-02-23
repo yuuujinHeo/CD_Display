@@ -29,6 +29,10 @@ AdminConnector::AdminConnector(QObject *parent)
 
     qDebug() << "test";
 
+    operation_msg = "HEllo";
+    wait_time = "100";
+    call_num = "RainbowRobotics";
+
     // FOR TEST
 //    ST_ORDER_LEFT_INFO  temp1, temp2, temp3, temp4, temp5;
 //    temp1.transaction_number = "00011";
@@ -92,12 +96,15 @@ void AdminConnector::onRequestReply(QtHttpRequest *request, QtHttpReply *reply){
         }
     }else if(json["PLATFORM_STATE"].toString() == "NEED_MAINTENANCE"){
         boba_state = 1;
-    }else if(json["PLATFORM_STATE"].toString() == "PRE_OPERATION"){
+    }else if(json["PLATFORM_STATE"].toString() == "IN_READY"){
         boba_state = 2;
     }else if(json["PALTFORM_STATE"].toString() == "ERROR_OCCURRED"){
 
     }
 
+    call_num = json["CALL"].toString();
+    operation_msg = json["OPERATION_MSG"].toString();
+    wait_time = json["TIME"].toString();
 
     switch(boba_state){
     case 0: break;
@@ -208,6 +215,7 @@ void AdminConnector::onCheck(){
     connection_count++;
     // 5초 동안 MixxAdmin으로부터 아무런 메시지가 없으면 로봇 연결이 끊어진 것으로 간주
     if(connection_count > 5){
+        QMetaObject::invokeMethod(object, "error");
         is_connected = false;
 
         LeftList.clear();
@@ -224,6 +232,16 @@ void AdminConnector::onCheck(){
         is_connected = true;
     }
 
+}
+
+QString AdminConnector::getCallStr(){
+    return call_num;
+}
+QString AdminConnector::getTimeStr(){
+    return wait_time;
+}
+QString AdminConnector::getMsgStr(){
+    return operation_msg;
 }
 
 int AdminConnector::getLeftSize(){
